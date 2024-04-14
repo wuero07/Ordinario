@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +14,13 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+
+        String username = getIntent().getStringExtra("username");
+
+
+        TextView usernameTextView = findViewById(R.id.usernameTextView);
+        usernameTextView.setText(username);
 
         Button motosButton = findViewById(R.id.motosButton);
         Button cascosButton = findViewById(R.id.cascosButton);
@@ -46,5 +54,6 @@ public class MainMenuActivity extends AppCompatActivity {
         });
     }
 }
+
 
 

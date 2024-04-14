@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(LoginActivity.this, MainMenuActivity.class);
+                    intent.putExtra("username", user);
                     startActivity(intent);
                 } else {
                     Toast.makeText(LoginActivity.this, "Datos incorrectos", Toast.LENGTH_SHORT).show();
@@ -44,4 +45,5 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 }
+
 

@@ -21,6 +21,15 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de usuario"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"/>
+
             <Button
                 android:id="@+id/motosButton"
                 android:layout_width="wrap_content"
