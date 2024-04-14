@@ -7,50 +7,56 @@
     android:layout_height="match_parent"
     tools:context=".FinishOrderActivity">
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:fillViewport="true">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/productRecyclerView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/totalPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total: $0"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        <Button
-            android:id="@+id/finishOrderButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Finalizar pedido" />
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total: $0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
 
+            <Button
+                android:id="@+id/finishOrderButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Finalizar pedido" />
 
-        <Button
-            android:id="@+id/selectAnotherProductButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Seleccionar otro producto" />
-        <TextView
-            android:id="@+id/cartTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Productos en el carrito:"
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/selectAnotherProductButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar otro producto" />
 
+            <TextView
+                android:id="@+id/cartTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Productos en el carrito:"
+                android:textSize="16sp" />
 
-    </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
