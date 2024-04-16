@@ -1,15 +1,14 @@
 package com.example.amoto;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.Serializable;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Set;
 
 public class FinishOrderActivity extends AppCompatActivity {
 
@@ -18,49 +17,57 @@ public class FinishOrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish_order);
 
-        // Recibe la lista de productos del intent
-        Intent intent = getIntent();
-        if (intent != null && intent.hasExtra("cartProducts")) {
-            List<Product> cartProducts = (List<Product>) intent.getSerializableExtra("cartProducts");
-
-            // Muestra los detalles de los productos y el total
-            showCartProducts(cartProducts);
+        // Obtener los productos del carrito de SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("Cart", MODE_PRIVATE);
+        Set<String> cartSet = sharedPreferences.getStringSet("cartProducts", null);
+        ArrayList<String> cartProducts = new ArrayList<>();
+        if (cartSet != null) {
+            cartProducts.addAll(cartSet);
         }
 
 
-        Button finishOrderButton = findViewById(R.id.finishOrderButton);
-        finishOrderButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        showCartProducts(cartProducts);
 
 
         Button selectAnotherProductButton = findViewById(R.id.selectAnotherProductButton);
         selectAnotherProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent menuIntent = new Intent(FinishOrderActivity.this, SelectedProductsActivity.class);
+
+                Intent menuIntent = new Intent(FinishOrderActivity.this, MainMenuActivity.class);
                 startActivity(menuIntent);
+            }
+        });
+
+
+        Button finishOrderButton = findViewById(R.id.finishOrderButton);
+        finishOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent paymentIntent = new Intent(FinishOrderActivity.this, Pago.class);
+                startActivity(paymentIntent);
             }
         });
     }
 
-    // mostrar los productos en el carrito y calcular el total
-    private void showCartProducts(List<Product> cartProducts) {
-        double total = 0;
-        StringBuilder productsText = new StringBuilder();
-        for (Product product : cartProducts) {
-            productsText.append("Product: ").append(product.getName()).append(", Quantity: ").append(product.getQuantity()).append("\n");
-            total += product.getPrice() * product.getQuantity();
-        }
-        TextView cartTextView = findViewById(R.id.cartTextView);
-        cartTextView.setText(productsText.toString());
 
-        // Muestra el total
-        TextView totalPriceTextView = findViewById(R.id.totalPrice);
-        totalPriceTextView.setText("Total: $" + total);
+    private void showCartProducts(ArrayList<String> cartProducts) {
+
+        TextView itemListTextView = findViewById(R.id.itemListTextView);
+
+        if (itemListTextView != null && !cartProducts.isEmpty()) {
+
+            StringBuilder productListText = new StringBuilder();
+            for (String product : cartProducts) {
+                productListText.append("Producto: ").append(product).append("\n");
+            }
+
+            itemListTextView.setText(productListText.toString());
+        } else {
+
+            itemListTextView.setText("No hay productos en el carrito");
+        }
     }
 }
 

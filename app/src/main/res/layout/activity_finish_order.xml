@@ -18,27 +18,13 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/productRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
             <TextView
-                android:id="@+id/totalPrice"
+                android:id="@+id/itemListTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total: $0"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:paddingTop="16dp"
+                android:text="Productos en el carrito:"
+                android:textSize="16sp"
                 android:paddingBottom="8dp" />
-
-            <Button
-                android:id="@+id/finishOrderButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Finalizar pedido" />
 
             <Button
                 android:id="@+id/selectAnotherProductButton"
@@ -46,12 +32,11 @@
                 android:layout_height="wrap_content"
                 android:text="Seleccionar otro producto" />
 
-            <TextView
-                android:id="@+id/cartTextView"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/finishOrderButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Productos en el carrito:"
-                android:textSize="16sp" />
+                android:text="Finalizar pedido" />
 
         </LinearLayout>
 
