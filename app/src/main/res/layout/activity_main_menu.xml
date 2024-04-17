@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenuActivity">
+    tools:context=".MainMenuActivity"
+    android:background="#A6A3A3">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,6 +27,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre de usuario"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="18sp"
                 android:layout_marginTop="16dp"
                 android:layout_centerHorizontal="true"/>
@@ -35,6 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Motos"
+                android:backgroundTint="#AAA8A8"
+                android:textColor="@color/black"
                 android:drawableTop="@drawable/menumoto" />
 
             <Button
@@ -42,6 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cascos"
+                android:textColor="@color/black"
+                android:backgroundTint="#AAA8A8"
                 android:drawableTop="@drawable/menucasco" />
 
             <Button
@@ -49,6 +56,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Refacciones"
+                android:textColor="@color/black"
+                android:backgroundTint="#AAA8A8"
                 android:drawableTop="@drawable/menurefracciones" />
         </LinearLayout>
 

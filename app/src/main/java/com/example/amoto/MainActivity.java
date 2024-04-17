@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.apply();
 
                     Toast.makeText(MainActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-                    // Redirige al usuario a LoginActivity
+
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                 } else {

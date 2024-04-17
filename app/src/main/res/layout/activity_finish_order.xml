@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FinishOrderActivity">
+    tools:context=".FinishOrderActivity"
+    android:background="@drawable/yamaha">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,19 +25,22 @@
                 android:layout_height="wrap_content"
                 android:text="Productos en el carrito:"
                 android:textSize="16sp"
+                android:textColor="@color/white"
                 android:paddingBottom="8dp" />
 
             <Button
                 android:id="@+id/selectAnotherProductButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Seleccionar otro producto" />
+                android:text="Seleccionar otro producto"
+                android:backgroundTint="#F30202"/>
 
             <Button
                 android:id="@+id/finishOrderButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Finalizar pedido" />
+                android:text="Finalizar pedido"
+                android:backgroundTint="#F30202"/>
 
         </LinearLayout>
 

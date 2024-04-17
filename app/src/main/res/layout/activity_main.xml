@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/fondou"
     tools:context=".MainActivity">
 
     <EditText
@@ -13,7 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:hint="Nombre de usuario" />
+        android:hint="Nombre de usuario"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/password"
@@ -21,12 +24,17 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:hint="Contraseña"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar" />
+        android:text="Registrar"
+        android:backgroundTint="#F40606"
+        android:textStyle="bold"
+        />
 
 </LinearLayout>

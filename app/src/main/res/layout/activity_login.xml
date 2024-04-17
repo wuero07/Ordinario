@@ -6,23 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/fondol">
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="Nombre de usuario" />
 
     <EditText
         android:id="@+id/password"
+        android:textColorHint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:hint="Contraseña"
+        android:textColor="@color/white"
         android:inputType="textPassword" />
 
     <Button
@@ -30,5 +35,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Iniciar sesión" />
+        android:textColor="@color/white"
+        android:backgroundTint="#FA0707"
+        android:text="Iniciar sesión"
+        android:textStyle="bold"/>
 </LinearLayout>

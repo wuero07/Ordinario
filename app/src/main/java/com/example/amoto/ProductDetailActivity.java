@@ -42,7 +42,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                             int newQuantity = Integer.parseInt(quantityEditText.getText().toString());
                             product.setQuantity(product.getQuantity() + newQuantity);
 
-                            // Guardar el producto en el carrito usando SharedPreferences
+                            // Guarda el producto en el carrito usando SharedPreferences
                             SharedPreferences sharedPreferences = getSharedPreferences("Cart", MODE_PRIVATE);
                             Set<String> cartSet = sharedPreferences.getStringSet("cartProducts", new HashSet<String>());
                             cartSet.add(product.getName());
@@ -50,11 +50,11 @@ public class ProductDetailActivity extends AppCompatActivity {
                             editor.putStringSet("cartProducts", cartSet);
                             editor.apply();
 
-                            // Ir a la actividad de finalización de pedido
+
                             Intent finishOrderIntent = new Intent(ProductDetailActivity.this, FinishOrderActivity.class);
                             startActivity(finishOrderIntent);
                         } catch (NumberFormatException e) {
-                            // Manejar la excepción, por ejemplo, mostrando un mensaje al usuario
+
                             Toast.makeText(ProductDetailActivity.this, "Por favor, ingrese una cantidad válida", Toast.LENGTH_SHORT).show();
                         }
                     }
